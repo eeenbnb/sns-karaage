@@ -19,6 +19,13 @@
     }
   },
   "projects": {
+    "editor-karaage": {
+      "tags": []
+    },
+    "editor-karaage-e2e": {
+      "tags": [],
+      "implicitDependencies": ["editor-karaage"]
+    },
     "sns-karaage-view": {
       "tags": []
     },

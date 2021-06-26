@@ -1,6 +1,133 @@
 {
   "version": 2,
   "projects": {
+    "editor-karaage": {
+      "projectType": "application",
+      "root": "apps/editor-karaage",
+      "sourceRoot": "apps/editor-karaage/src",
+      "prefix": "sns-karaage",
+      "targets": {
+        "build": {
+          "executor": "@angular-devkit/build-angular:browser",
+          "outputs": [
+            "{options.outputPath}"
+          ],
+          "options": {
+            "outputPath": "dist/apps/editor-karaage",
+            "index": "apps/editor-karaage/src/index.html",
+            "main": "apps/editor-karaage/src/main.ts",
+            "polyfills": "apps/editor-karaage/src/polyfills.ts",
+            "tsConfig": "apps/editor-karaage/tsconfig.app.json",
+            "inlineStyleLanguage": "scss",
+            "assets": [
+              "apps/editor-karaage/src/favicon.ico",
+              "apps/editor-karaage/src/assets"
+            ],
+            "styles": [
+              "apps/editor-karaage/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "fileReplacements": [
+                {
+                  "replace": "apps/editor-karaage/src/environments/environment.ts",
+                  "with": "apps/editor-karaage/src/environments/environment.prod.ts"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "executor": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "editor-karaage:build:production"
+            },
+            "development": {
+              "browserTarget": "editor-karaage:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "executor": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "editor-karaage:build"
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/editor-karaage/src/**/*.ts",
+              "apps/editor-karaage/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": [
+            "coverage/apps/editor-karaage"
+          ],
+          "options": {
+            "jestConfig": "apps/editor-karaage/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "editor-karaage-e2e": {
+      "root": "apps/editor-karaage-e2e",
+      "sourceRoot": "apps/editor-karaage-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "executor": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/editor-karaage-e2e/cypress.json",
+            "tsConfig": "apps/editor-karaage-e2e/tsconfig.e2e.json",
+            "devServerTarget": "editor-karaage:serve:development"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "editor-karaage:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/editor-karaage-e2e/**/*.{js,ts}"
+            ]
+          }
+        }
+      }
+    },
     "sns-karaage-view": {
       "root": "apps/sns-karaage-view",
       "sourceRoot": "apps/sns-karaage-view",
@@ -8,7 +135,9 @@
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "root": "apps/sns-karaage-view",
             "outputPath": "dist/apps/sns-karaage-view"
@@ -38,7 +167,9 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/sns-karaage-view"],
+          "outputs": [
+            "coverage/apps/sns-karaage-view"
+          ],
           "options": {
             "jestConfig": "apps/sns-karaage-view/jest.config.js",
             "passWithNoTests": true
@@ -47,7 +178,9 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/sns-karaage-view/**/*.{ts,tsx,js,jsx}"]
+            "lintFilePatterns": [
+              "apps/sns-karaage-view/**/*.{ts,tsx,js,jsx}"
+            ]
           }
         }
       }
@@ -73,7 +206,9 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/sns-karaage-view-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/sns-karaage-view-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -93,6 +228,20 @@
         "style": "scss",
         "linter": "eslint"
       }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
     }
   },
   "defaultProject": "sns-karaage-view"
