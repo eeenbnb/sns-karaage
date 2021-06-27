@@ -9,9 +9,7 @@
       "targets": {
         "build": {
           "executor": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/editor-karaage",
             "index": "apps/editor-karaage/src/index.html",
@@ -23,9 +21,7 @@
               "apps/editor-karaage/src/favicon.ico",
               "apps/editor-karaage/src/assets"
             ],
-            "styles": [
-              "apps/editor-karaage/src/styles.scss"
-            ],
+            "styles": ["apps/editor-karaage/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -90,9 +86,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/editor-karaage"
-          ],
+          "outputs": ["coverage/apps/editor-karaage"],
           "options": {
             "jestConfig": "apps/editor-karaage/jest.config.js",
             "passWithNoTests": true
@@ -121,8 +115,181 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["apps/editor-karaage-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "editor-ui": {
+      "projectType": "library",
+      "root": "libs/editor-ui",
+      "sourceRoot": "libs/editor-ui/src",
+      "prefix": "sns-karaage",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/editor-ui"],
+          "options": {
+            "jestConfig": "libs/editor-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "apps/editor-karaage-e2e/**/*.{js,ts}"
+              "libs/editor-ui/src/**/*.ts",
+              "libs/editor-ui/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "hoge": {
+      "projectType": "library",
+      "root": "libs/hoge",
+      "sourceRoot": "libs/hoge/src",
+      "prefix": "sns-karaage",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/hoge"],
+          "options": {
+            "jestConfig": "libs/hoge/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/hoge/src/**/*.ts",
+              "libs/hoge/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "page-editor": {
+      "projectType": "library",
+      "root": "libs/page-editor",
+      "sourceRoot": "libs/page-editor/src",
+      "prefix": "sns-karaage",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/page-editor"],
+          "options": {
+            "jestConfig": "libs/page-editor/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/page-editor/src/**/*.ts",
+              "libs/page-editor/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "page-hoge": {
+      "projectType": "library",
+      "root": "libs/page-hoge",
+      "sourceRoot": "libs/page-hoge/src",
+      "prefix": "sns-karaage",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/page-hoge"],
+          "options": {
+            "jestConfig": "libs/page-hoge/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/page-hoge/src/**/*.ts",
+              "libs/page-hoge/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "page-login": {
+      "projectType": "library",
+      "root": "libs/page-login",
+      "sourceRoot": "libs/page-login/src",
+      "prefix": "sns-karaage",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/page-login"],
+          "options": {
+            "jestConfig": "libs/page-login/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/page-login/src/**/*.ts",
+              "libs/page-login/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "routing-editor-karaage": {
+      "projectType": "library",
+      "root": "libs/routing-editor-karaage",
+      "sourceRoot": "libs/routing-editor-karaage/src",
+      "prefix": "sns-karaage",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/routing-editor-karaage"],
+          "options": {
+            "jestConfig": "libs/routing-editor-karaage/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/routing-editor-karaage/src/**/*.ts",
+              "libs/routing-editor-karaage/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "service-login": {
+      "projectType": "library",
+      "root": "libs/service-login",
+      "sourceRoot": "libs/service-login/src",
+      "prefix": "sns-karaage",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/service-login"],
+          "options": {
+            "jestConfig": "libs/service-login/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/service-login/src/**/*.ts",
+              "libs/service-login/src/**/*.html"
             ]
           }
         }
@@ -135,9 +302,7 @@
       "targets": {
         "build": {
           "executor": "@nrwl/next:build",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "root": "apps/sns-karaage-view",
             "outputPath": "dist/apps/sns-karaage-view"
@@ -167,9 +332,7 @@
         },
         "test": {
           "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/sns-karaage-view"
-          ],
+          "outputs": ["coverage/apps/sns-karaage-view"],
           "options": {
             "jestConfig": "apps/sns-karaage-view/jest.config.js",
             "passWithNoTests": true
@@ -178,9 +341,7 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/sns-karaage-view/**/*.{ts,tsx,js,jsx}"
-            ]
+            "lintFilePatterns": ["apps/sns-karaage-view/**/*.{ts,tsx,js,jsx}"]
           }
         }
       }
@@ -206,9 +367,29 @@
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/sns-karaage-view-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/sns-karaage-view-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ui": {
+      "projectType": "library",
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "prefix": "sns-karaage",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui"],
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
           }
         }
       }

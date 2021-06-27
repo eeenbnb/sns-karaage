@@ -24,3 +24,21 @@ npx nx run sns-karaage-view:serve
 ```bash
 npx nx run editor-karaage:serve
 ```
+
+create ui library  
+```bash
+npx nx g @nrwl/angular:library hoge
+npx nx g @nrwl/angular:component fuga --project hoge
+```
+
+create pages
+```bash
+npx nx g @nrwl/angular:library page-hoge --routing=true
+npx nx g @nrwl/angular:component page-fuga --project page-hoge
+```
+
+create service
+```bash
+npx nx g @nrwl/angular:library service-hoge
+npx nx g @nrwl/angular:service service-hoge --project service-hoge
+```

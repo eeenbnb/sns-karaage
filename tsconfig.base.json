@@ -14,7 +14,18 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@sns-karaage/editor-ui": ["libs/editor-ui/src/index.ts"],
+      "@sns-karaage/hoge": ["libs/hoge/src/index.ts"],
+      "@sns-karaage/page-editor": ["libs/page-editor/src/index.ts"],
+      "@sns-karaage/page-hoge": ["libs/page-hoge/src/index.ts"],
+      "@sns-karaage/page-login": ["libs/page-login/src/index.ts"],
+      "@sns-karaage/routing-editor-karaage": [
+        "libs/routing-editor-karaage/src/index.ts"
+      ],
+      "@sns-karaage/service-login": ["libs/service-login/src/index.ts"],
+      "@sns-karaage/ui": ["libs/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

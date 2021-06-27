@@ -26,12 +26,36 @@
       "tags": [],
       "implicitDependencies": ["editor-karaage"]
     },
+    "editor-ui": {
+      "tags": []
+    },
+    "hoge": {
+      "tags": []
+    },
+    "page-editor": {
+      "tags": []
+    },
+    "page-hoge": {
+      "tags": []
+    },
+    "page-login": {
+      "tags": []
+    },
+    "routing-editor-karaage": {
+      "tags": []
+    },
+    "service-login": {
+      "tags": []
+    },
     "sns-karaage-view": {
       "tags": []
     },
     "sns-karaage-view-e2e": {
       "tags": [],
       "implicitDependencies": ["sns-karaage-view"]
+    },
+    "ui": {
+      "tags": []
     }
   }
 }
