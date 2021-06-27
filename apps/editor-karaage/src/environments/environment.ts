@@ -1,14 +1,7 @@
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
-const firebaseConfig = {
-  apiKey: "AIzaSyAmlk2Fb-oTQhCqBmPVQhsJvFWEdrrDsbo",
-  authDomain: "sns-karaage.firebaseapp.com",
-  projectId: "sns-karaage",
-  storageBucket: "sns-karaage.appspot.com",
-  messagingSenderId: "904327166454",
-  appId: "1:904327166454:web:41516b82a029ee954aafd7"
-};
+import { firebaseConfig } from '.env/firebase';
 
 export const environment = {
   production: false,

@@ -13,6 +13,26 @@ cd functions && npm install
 npm start
 ```
 
+
+**firebase setting**
+
+```bash
+touch .env/firebase.ts
+```
+
+`.env/firebase.ts`
+
+```typescript
+export const firebaseConfig = {
+  apiKey: "xxxxx",
+  authDomain: "xxxxx",
+  projectId: "xxxxx",
+  storageBucket: "xxxxx",
+  messagingSenderId: "xxxxx",
+  appId: "xxxxx"
+};
+```
+
 ### viewer app start
 
 ```bash
