@@ -1,1 +1,23 @@
-<p>page-editor works!</p>
+<form class="contents" [formGroup]="postDateForm" (ngSubmit)="onSubmit()">
+
+  <textarea name="name" rows="8" cols="80" [formControl]="text" required>
+
+  </textarea>
+
+  <select [formControl]="par" required>
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+  </select>
+
+  <button type="submit" name="button">
+    保存
+  </button>
+</form>
+
+
+<button type="button" name="button" (click)="logout()">
+  ログアウト
+</button>

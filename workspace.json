@@ -21,7 +21,10 @@
               "apps/editor-karaage/src/favicon.ico",
               "apps/editor-karaage/src/assets"
             ],
-            "styles": ["apps/editor-karaage/src/styles.scss"],
+            "styles": [
+              "apps/editor-karaage/src/styles.scss",
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -120,56 +123,6 @@
         }
       }
     },
-    "editor-ui": {
-      "projectType": "library",
-      "root": "libs/editor-ui",
-      "sourceRoot": "libs/editor-ui/src",
-      "prefix": "sns-karaage",
-      "targets": {
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/editor-ui"],
-          "options": {
-            "jestConfig": "libs/editor-ui/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/editor-ui/src/**/*.ts",
-              "libs/editor-ui/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "hoge": {
-      "projectType": "library",
-      "root": "libs/hoge",
-      "sourceRoot": "libs/hoge/src",
-      "prefix": "sns-karaage",
-      "targets": {
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/hoge"],
-          "options": {
-            "jestConfig": "libs/hoge/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/hoge/src/**/*.ts",
-              "libs/hoge/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
     "page-editor": {
       "projectType": "library",
       "root": "libs/page-editor",
@@ -190,31 +143,6 @@
             "lintFilePatterns": [
               "libs/page-editor/src/**/*.ts",
               "libs/page-editor/src/**/*.html"
-            ]
-          }
-        }
-      }
-    },
-    "page-hoge": {
-      "projectType": "library",
-      "root": "libs/page-hoge",
-      "sourceRoot": "libs/page-hoge/src",
-      "prefix": "sns-karaage",
-      "targets": {
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/page-hoge"],
-          "options": {
-            "jestConfig": "libs/page-hoge/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "libs/page-hoge/src/**/*.ts",
-              "libs/page-hoge/src/**/*.html"
             ]
           }
         }
@@ -368,28 +296,6 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/sns-karaage-view-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "ui": {
-      "projectType": "library",
-      "root": "libs/ui",
-      "sourceRoot": "libs/ui/src",
-      "prefix": "sns-karaage",
-      "targets": {
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/ui"],
-          "options": {
-            "jestConfig": "libs/ui/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
           }
         }
       }

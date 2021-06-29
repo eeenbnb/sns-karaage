@@ -26,16 +26,7 @@
       "tags": [],
       "implicitDependencies": ["editor-karaage"]
     },
-    "editor-ui": {
-      "tags": []
-    },
-    "hoge": {
-      "tags": []
-    },
     "page-editor": {
-      "tags": []
-    },
-    "page-hoge": {
       "tags": []
     },
     "page-login": {
@@ -53,9 +44,6 @@
     "sns-karaage-view-e2e": {
       "tags": [],
       "implicitDependencies": ["sns-karaage-view"]
-    },
-    "ui": {
-      "tags": []
     }
   }
 }

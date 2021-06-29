@@ -62,3 +62,9 @@ create service
 npx nx g @nrwl/angular:library service-hoge
 npx nx g @nrwl/angular:service service-hoge --project service-hoge
 ```
+
+create guard
+```bash
+npx nx g @nrwl/angular:library guard-hoge
+npx nx g @nrwl/angular:guard guard-hoge --project guard-hoge
+```
