@@ -44,6 +44,9 @@
     "sns-karaage-view-e2e": {
       "tags": [],
       "implicitDependencies": ["sns-karaage-view"]
+    },
+    "ui-editor-karaage": {
+      "tags": []
     }
   }
 }

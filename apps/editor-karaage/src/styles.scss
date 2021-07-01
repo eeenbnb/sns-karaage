@@ -1,3 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+$min-conteiner-size: 375px;
+
+:root{
+  --main-color: #8DBCF2;
+  --main-padding: 16px;
+  --main-outer-margin: 0px;
+  --main-conteiner-size: #{$min-conteiner-size};
+
+  @media(max-width: $min-conteiner-size){
+    --main-padding: 8px;
+    --main-outer-margin: 8px;
+    --main-conteiner-size: 100%;
+  }
+}

@@ -6,5 +6,6 @@ module.exports = {
     '<rootDir>/libs/page-login',
     '<rootDir>/libs/page-editor',
     '<rootDir>/libs/service-login',
+    '<rootDir>/libs/ui-editor-karaage',
   ],
 };

@@ -39,6 +39,11 @@ export const firebaseConfig = {
 npx nx run sns-karaage-view:serve
 ```
 
+create pages
+```bash
+npx nx g @nrwl/next:page
+```
+
 ### editor app start
 
 ```bash

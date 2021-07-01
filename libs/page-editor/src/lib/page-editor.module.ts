@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { RouterModule, Route } from '@angular/router';
 import { PageEditorComponent } from './page-editor/page-editor.component';
 
-import { ServiceLoginModule } from 'libs/service-login/src'
+import { UiEditorKaraageModule } from 'libs/ui-editor-karaage/src'
 
 export const pageEditorRoutes: Route[] = [
   {
@@ -19,8 +19,7 @@ export const pageEditorRoutes: Route[] = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule.forChild(pageEditorRoutes),
-
-    ServiceLoginModule
+    UiEditorKaraageModule
   ],
   declarations: [
     PageEditorComponent

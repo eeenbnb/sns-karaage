@@ -1,0 +1,21 @@
+:host{
+  display: block;
+
+  width: var(--main-conteiner-size);
+
+  margin-top: 20%;
+  margin-left: var(--main-outer-margin);
+  margin-right: var(--main-outer-margin);
+  padding: var(--main-padding);
+
+  border: 5px solid var(--main-color);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom: none;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+  &::-webkit-scrollbar{
+    display: none;
+  }
+}

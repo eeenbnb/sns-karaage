@@ -21,10 +21,7 @@
               "apps/editor-karaage/src/favicon.ico",
               "apps/editor-karaage/src/assets"
             ],
-            "styles": [
-              "apps/editor-karaage/src/styles.scss",
-              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
-            ],
+            "styles": ["apps/editor-karaage/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -296,6 +293,31 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["apps/sns-karaage-view-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "ui-editor-karaage": {
+      "projectType": "library",
+      "root": "libs/ui-editor-karaage",
+      "sourceRoot": "libs/ui-editor-karaage/src",
+      "prefix": "sns-karaage",
+      "targets": {
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui-editor-karaage"],
+          "options": {
+            "jestConfig": "libs/ui-editor-karaage/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/ui-editor-karaage/src/**/*.ts",
+              "libs/ui-editor-karaage/src/**/*.html"
+            ]
           }
         }
       }

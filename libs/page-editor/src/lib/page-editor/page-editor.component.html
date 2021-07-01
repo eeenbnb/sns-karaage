@@ -1,23 +1,30 @@
-<form class="contents" [formGroup]="postDateForm" (ngSubmit)="onSubmit()">
+<sns-karaage-ek-header></sns-karaage-ek-header>
 
-  <textarea name="name" rows="8" cols="80" [formControl]="text" required>
+<sns-karaage-ek-cord>
+  <form class="contents" [formGroup]="postDateForm" (ngSubmit)="onSubmit()">
+    <sns-karaage-ek-input-wrapper>
+      <textarea name="name" rows="8" cols="80" [formControl]="text" required></textarea>
+    </sns-karaage-ek-input-wrapper>
 
-  </textarea>
+    <sns-karaage-ek-input-wrapper>
+      <select [formControl]="par" required>
+        <option disabled value="">評価を入力してください</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </sns-karaage-ek-input-wrapper>
 
-  <select [formControl]="par" required>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-  </select>
+    <sns-karaage-ek-input-wrapper>
+      <input type="file" accept="image/*" (change)="onFileChange($event)"/>
+    </sns-karaage-ek-input-wrapper>
 
-  <button type="submit" name="button">
-    保存
-  </button>
-</form>
-
-
-<button type="button" name="button" (click)="logout()">
-  ログアウト
-</button>
+    <sns-karaage-ek-input-wrapper>
+      <button type="submit" name="button" [disabled]="postDateForm.invalid">
+        保存
+      </button>
+    </sns-karaage-ek-input-wrapper>
+  </form>
+</sns-karaage-ek-cord>

@@ -8,7 +8,7 @@
     "start": "nx serve",
     "build": "npm run build:view && npm run build:editor",
     "build:view": "nx run sns-karaage-view:build",
-    "build:editor": "nx run editor-karaage:build --base-href=/ng/ && cp -r dist/apps/editor-karaage public/ng/",
+    "build:editor": "nx run editor-karaage:build --base-href=/ng/",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
     "e2e": "nx e2e",

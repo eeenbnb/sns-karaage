@@ -22,7 +22,10 @@ const routes: Routes = [
 @NgModule({
   imports: [
     ServiceLoginModule,
-    RouterModule.forRoot(routes, { initialNavigation: 'enabled' })
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabled',
+      useHash: true
+    })
   ],
   exports: [
     RouterModule

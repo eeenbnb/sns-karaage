@@ -20,7 +20,8 @@
       "@sns-karaage/routing-editor-karaage": [
         "libs/routing-editor-karaage/src/index.ts"
       ],
-      "@sns-karaage/service-login": ["libs/service-login/src/index.ts"]
+      "@sns-karaage/service-login": ["libs/service-login/src/index.ts"],
+      "@sns-karaage/ui-editor-karaage": ["libs/ui-editor-karaage/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

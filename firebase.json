@@ -16,9 +16,11 @@
   "functions": {
     "predeploy": [
       "npm --prefix \"$PROJECT_DIR\" install",
-      "npm --prefix \"$PROJECT_DIR\" run build:view",
+      "npm --prefix \"$PROJECT_DIR\" run build",
       "rm -rf functions/app",
-      "cp -r dist/apps/sns-karaage-view/ functions/app"
+      "cp -r dist/apps/sns-karaage-view/ functions/app",
+      "rm -rf public/ng",
+      "cp -r dist/apps/editor-karaage public/ng"
     ],
     "runtime": "nodejs14"
   }

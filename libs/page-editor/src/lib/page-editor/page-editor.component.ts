@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { AngularFirestore } from '@angular/fire/firestore';
-import { ServiceLoginService } from 'libs/service-login/src/lib/service-login.service'
+import { AngularFireStorage } from '@angular/fire/storage';
 
 @Component({
   selector: 'sns-karaage-page-editor',
@@ -11,31 +11,45 @@ import { ServiceLoginService } from 'libs/service-login/src/lib/service-login.se
 })
 export class PageEditorComponent implements OnInit {
   text = new FormControl('', [Validators.required]);
-  par = new FormControl('1', [Validators.required]);
+  par = new FormControl('', [Validators.required]);
+  picture = new FormControl(null, [Validators.required]);
 
   postDateForm = new FormGroup({
     text: this.text,
-    par: this.par
+    par: this.par,
+    picture: this.picture
   })
 
   constructor(
-    private angularFirestore:AngularFirestore,
-    private serviceLoginService:ServiceLoginService
+    private angularFirestore: AngularFirestore,
+    private angularFireStorage: AngularFireStorage,
   ) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    console.log(this.postDateForm);
-    this.angularFirestore.collection("items").add({
-      test:this.text.value,
-      par:this.par.value
+  onFileChange(event: any) {
+    if (event.target.files && event.target.files.length) {
+      const [file] = event.target.files;
+      this.postDateForm.patchValue({
+        picture: file
+      });
+    }
+  }
+
+  onSubmit() {
+    if (this.postDateForm.invalid) {
+      return;
+    }
+    const file: File = this.picture.value;
+    const filePath = 'upload_files/' + new Date().toISOString();
+    const task = this.angularFireStorage.upload(filePath, file);
+    task.then((_) => {
+      this.angularFirestore.collection("items").add({
+        test: this.text.value,
+        par: this.par.value,
+        imagesPath: filePath
+      });
     });
   }
-
-  logout(){
-    this.serviceLoginService.logout();
-  }
-
 }
