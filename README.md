@@ -9,12 +9,12 @@ https://sns-karaage.web.app/ng
 
 ```bash
 npm install
-cd functions && npm install
+cd functions && npm install && cd ..
 npm start
 ```
 
 
-**firebase setting**
+**firebase setting**  
 
 ```bash
 touch .env/firebase.ts
@@ -32,6 +32,9 @@ export const firebaseConfig = {
   appId: "xxxxx"
 };
 ```
+
+**Firebase Admin SDK**   
+DL `serviceAccountKey.json` , set `.env/serviceAccountKey.json`
 
 ### viewer app start
 
