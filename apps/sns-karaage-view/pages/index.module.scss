@@ -1,5 +1,40 @@
-.list{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.section {
+  &:not(:first-of-type) {
+    margin-top: calc(var(--size-margin) * 2);
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: calc(var(--size-margin) *2);
+  }
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: var(--size-grid-2);
+  gap: var(--size-margin);
+
+  &__one {
+    &::before {
+      content: attr(data-text);
+      color: var(--dark);
+      padding-top: var(--size-padding);
+      padding-bottom: var(--size-padding);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+}
+
+.list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: var(--size-grid-4);
+  gap: var(--size-margin);
+
+  word-break: break-all;
 }

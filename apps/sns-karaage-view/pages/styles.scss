@@ -1,0 +1,27 @@
+@import "../styles/variables";
+@import "../styles/responsive";
+
+html {
+
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+	margin: 0;
+	padding: 0;
+}
+
+:root{
+	@each $name, $val in $colors {
+		--#{$name}: #{$val};
+  }
+	@include InMdCss{
+		@each $name, $val in $md-sizes {
+			--size-#{$name}: #{$val};
+	  }
+	}
+
+	@include InSpCss{
+		@each $name, $val in $sp-sizes {
+			--size-#{$name}: #{$val};
+	  }
+	}
+}

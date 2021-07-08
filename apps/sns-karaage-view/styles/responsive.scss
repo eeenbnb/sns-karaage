@@ -1,0 +1,13 @@
+@import "variables";
+
+@mixin InMdCss{
+  @media(min-width: $md-conteiner){
+    @content;
+  }
+}
+
+@mixin InSpCss{
+  @media(max-width: $md-conteiner){
+    @content;
+  }
+}

@@ -1,14 +1,18 @@
 import React from 'react';
 import { AppProps } from 'next/app';
-import Head from 'next/head';
-import { ReactComponent as NxLogo } from '../public/nx-logo-white.svg';
-import './styles.css';
+import './styles.scss';
+
+import { TopHeader } from '../components/top-header/top-header'
+import { TopSection } from '../components/top-section/top-section'
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
-    <main>
-      <Component {...pageProps} />
-    </main>
+    <>
+      <TopHeader/>
+      <TopSection>
+        <Component {...pageProps} />
+      </TopSection>
+    </>
   );
 }
 

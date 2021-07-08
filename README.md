@@ -44,6 +44,11 @@ create pages
 npx nx g @nrwl/next:page
 ```
 
+create component
+```bash
+npx nx g @nrwl/next:component top-section
+```
+
 ### editor app start
 
 ```bash
