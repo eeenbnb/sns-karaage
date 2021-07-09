@@ -1,0 +1,11 @@
+.one{
+  width: 100%;
+  &:not(:first-of-type) {
+    padding-top: var(--size-margin);
+  }
+
+  &:not(:last-of-type) {
+    padding-bottom: var(--size-margin);
+    border-bottom: 1px solid var(--dark);
+  }
+}

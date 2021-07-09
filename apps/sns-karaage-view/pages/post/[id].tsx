@@ -1,4 +1,5 @@
 import { apiUrl } from '../../libs/getApiUrl'
+import { Layout } from '../../components/layout/layout'
 
 /* eslint-disable-next-line */
 export interface IdProps {
@@ -8,9 +9,9 @@ export interface IdProps {
 function Id(props: IdProps) {
   const { api_data } = props;
   return (
-    <div>
+    <Layout>
       <p>{JSON.stringify(api_data)}</p>
-    </div>
+    </Layout>
   );
 }
 

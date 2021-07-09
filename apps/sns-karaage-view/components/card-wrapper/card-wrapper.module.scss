@@ -1,7 +1,8 @@
 .card{
   padding: var(--size-padding);
   border-radius: var(--size-border-radius);
-  border: 3px solid var(--dark);
-  
+  border: 3px solid var(--info);
+
   word-break: break-all;
+  box-shadow: 0 5px 25px 0 rgba(0, 0, 0, .2);
 }

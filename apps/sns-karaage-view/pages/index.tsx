@@ -1,76 +1,88 @@
 import React from 'react';
-import Link from 'next/link';
+import Head from 'next/head';
 import { apiUrl } from '../libs/getApiUrl'
 
 import style from './index.module.scss'
 
+import { Layout } from '../components/layout/layout'
+import { TopSection } from '../components/top-section/top-section'
 import { CardWrapper } from '../components/card-wrapper/card-wrapper'
+import { ListOneSection } from '../components/list-one-section/list-one-section'
+import { ListOne } from '../components/list-one/list-one'
+import { ItemPost } from '../components/item-post/item-post'
 import { ButtonPrimary } from '../components/button-primary/button-primary'
 import { ButtonClear } from '../components/button-clear/button-clear'
 
-export function Index(props) {
+import { post } from 'types/post'
+
+export interface IndexProps {
+  api_data: post[]
+}
+
+export function Index(props:IndexProps) {
   const { api_data } = props;
   return (
     <>
-      <section className={style.section}>
-        <CardWrapper>
-          <h2>SNS 唐揚げ</h2>
-          <p>日頃の唐揚げを公開してみませんか？</p>
-          <p>- 作った唐揚げ</p>
-          <p>- 買った唐揚げ</p>
-          <p>- 何気ない唐揚げ</p>
-          <br/>
-          <p>そのすべてが大切な唐揚げです。</p>
-        </CardWrapper>
-      </section>
+      {/* <TopSection/> */}
+      {/* isNotTopMargin={true} */}
+      <Layout>
+        <Head>
+          <title>ホーム｜sns-karaage</title>
+        </Head>
+        <ListOneSection>
+          <CardWrapper>
+            <h2>SNS 唐揚げ</h2>
+            <p>日頃の唐揚げを公開してみませんか？</p>
+            <p>- 作った唐揚げ</p>
+            <p>- 買った唐揚げ</p>
+            <p>- 何気ない唐揚げ</p>
+            <br/>
+            <p>そのすべてが大切な唐揚げです。</p>
+          </CardWrapper>
+        </ListOneSection>
 
-      <section className={style.section}>
-        <h2>
-          始める
-        </h2>
+        <ListOneSection>
+          <h2>
+            始める
+          </h2>
 
-        <div className={style.btns}>
-          <div className={style.btns__one} data-text="＼登録はこちら／">
-            <a href="/ng/#/singup">
-              <ButtonPrimary>
-                サインアップ
-              </ButtonPrimary>
-            </a>
+          <div className={style.btns}>
+            <div className={style.btns__one} data-text="＼登録はこちら／">
+              <a href="/ng/#/singup">
+                <ButtonPrimary>
+                  サインアップ
+                </ButtonPrimary>
+              </a>
+            </div>
+
+            <div className={style.btns__one}  data-text="＼ログインはこちら／">
+              <a href="/ng/#/login">
+                <ButtonClear>
+                  ログイン
+                </ButtonClear>
+              </a>
+            </div>
           </div>
+        </ListOneSection>
 
-          <div className={style.btns__one}  data-text="＼ログインはこちら／">
-            <a href="/ng/#/login">
-              <ButtonClear>
-                ログイン
-              </ButtonClear>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section className={style.section}>
-        <h2>
-          実際の投稿
-        </h2>
-
-        <div className={style.list}>
+        <ListOneSection>
+          <h2>
+            実際の投稿
+          </h2>
           {
-            api_data.map((item, index) => {
-              return (
-                <Link href={"/post/" + item.id} key={index}>
-                  {item.id}
-                </Link>
-              )
-            })
+            api_data.map((item, index) => (
+              <ListOne key={index}>
+                <ItemPost post={item} />
+              </ListOne>
+            ))
           }
-        </div>
-      </section>
+        </ListOneSection>
+      </Layout>
     </>
   );
 }
 
 Index.getInitialProps = async () => {
-  console.log(apiUrl);
   const res = await fetch(`${apiUrl}/api/post`)
   const json = await res.json()
 

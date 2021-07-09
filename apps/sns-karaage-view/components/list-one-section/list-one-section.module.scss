@@ -1,0 +1,9 @@
+.one{
+  &:not(:first-of-type) {
+    margin-top: calc(var(--size-margin) * 2);
+  }
+
+  &:not(:last-of-type) {
+    margin-bottom: calc(var(--size-margin) *2);
+  }
+}

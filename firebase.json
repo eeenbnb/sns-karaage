@@ -19,9 +19,25 @@
       "npm --prefix \"$PROJECT_DIR\" run build",
       "rm -rf functions/app",
       "cp -r dist/apps/sns-karaage-view/ functions/app",
+      "cp -r dist/apps/sns-karaage-view/public/* public/",
       "rm -rf public/ng",
       "cp -r dist/apps/editor-karaage public/ng"
     ],
-    "runtime": "nodejs14"
+    "runtime": "nodejs14",
+    "source": "functions"
+  },
+  "emulators": {
+    "auth": {
+      "port": 9099
+    },
+    "functions": {
+      "port": 5001
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    }
   }
 }
